@@ -37,6 +37,12 @@ while 1:
         camera.start_preview()
         # Camera warm-up time
         time.sleep(2)
-        camera.capture('img.jpg')
-     
+        # Get timestamp to make unique name for photo
+        timeStamp = str(time.time())
+        # Remove decimal from timestamp
+        timeStampArray = timeStamp.split('.')
+        timeStamp = timeStampArray[0]
+        imgLocation = 'images/img' + timeStamp + '.jpg'
+        camera.capture(imgLocation)
+    
 s.close()
