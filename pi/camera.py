@@ -6,6 +6,10 @@ import socket
 import sys
 import time
 import picamera
+import serial
+
+ser = serial.Serial('/dev/ttyAMA0', 9600)
+print ser.readline()
  
 HOST = ''   # Symbolic name, meaning all available interfaces
 PORT = 8888 # Arbitrary non-privileged port
